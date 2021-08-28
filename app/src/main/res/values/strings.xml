@@ -15,6 +15,9 @@
     <string name="select_Recipe_image">Select recipe image</string>
     <string name="menu_cancelRecipe">Cancel</string>
     <string name="menu_deleteRecipe">Delete</string>
+    <string name="select_recipe_image">Select recipe Picture</string>
+    <string name="change_recipe_image">Change recipe Picture</string>
+
 
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -31,6 +34,35 @@
 
     <string name="aboutapp_title">Master Cheif !!</string>
     <string name="aboutapp_message">Welcome, EveryOne \n\nThis App is Especially design for Cheifs who wants to improve and share their Recipes with other people .\n\n To make chief community more closer </string>
+    <string name="messageLoading">Please wait while we Connect to the Server...</string>
+    <!-- START Firebase Resources-->
+
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="send_link">Send Link</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="token_null">Token: null</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="emailpassword_title_text">Welcome Chef</string>
+
+    <string name="action_update">Update</string>
+    <string name="action_edit">Edit Recipe</string>
+    <string name="fullrecipe_edit">Edit Your Recipe Below</string>
+    <!--END Firebase Resources-->
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

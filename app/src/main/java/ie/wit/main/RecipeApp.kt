@@ -1,19 +1,18 @@
 package ie.wit.main
 
-
 import android.app.Application
-import android.util.Log
-import ie.wit.models.RecipeMemStore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 
-import ie.wit.models.RecipeStore
+class RecipeApp : Application(), AnkoLogger {
 
-class RecipeApp : Application() {
-
-    lateinit var recipesStore: RecipeStore
+    lateinit var auth: FirebaseAuth
+    lateinit var database: DatabaseReference
 
     override fun onCreate() {
         super.onCreate()
-        recipesStore = RecipeMemStore()
-        Log.v("Recipe","Recipe World App started")
+        info("Recipe App started")
     }
 }

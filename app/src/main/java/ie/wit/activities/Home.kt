@@ -10,12 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.FirebaseDatabase
 import ie.wit.R
 import ie.wit.fragments.AboutApp
 import ie.wit.fragments.RecipeFragment
 import ie.wit.fragments.RecipeListFragment
+import ie.wit.main.RecipeApp
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.home.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 
@@ -23,11 +26,13 @@ class Home : AppCompatActivity() ,
     NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var ft: FragmentTransaction
+    lateinit var app: RecipeApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
-
+        setSupportActionBar(toolbar)
+        app = application as RecipeApp
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action",
@@ -56,6 +61,8 @@ class Home : AppCompatActivity() ,
             R.id.nav_recipe ->  navigateTo(RecipeFragment.newInstance())
             R.id.nav_recipelist ->navigateTo(RecipeListFragment.newInstance())
             R.id.nav_aboutapp ->navigateTo(AboutApp.newInstance())
+            R.id.nav_sign_out ->
+                signOut()
             else -> toast("You Selected Something Else")
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -69,8 +76,8 @@ class Home : AppCompatActivity() ,
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.action_recipe -> toast("You Selected Donate")
-            R.id.action_recipelist -> toast("You Selected Report")
+            R.id.nav_recipe -> toast("You Selected Recipe")
+            R.id.action_recipelist -> toast("You Selected Recipe List")
         }
         return super.onOptionsItemSelected(item)
     }
@@ -90,6 +97,13 @@ class Home : AppCompatActivity() ,
             .replace(R.id.homeFrame, fragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun signOut()
+    {
+        app.auth.signOut()
+        startActivity<Login>()
+        finish()
     }
 
 }

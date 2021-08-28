@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "223140288236",
+    "firebase_url": "https://recipe-world-2ed8d-default-rtdb.firebaseio.com",
+    "project_id": "recipe-world-2ed8d",
+    "storage_bucket": "recipe-world-2ed8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223140288236:android:5e6de161a76a5a4e3d37c9",
+        "android_client_info": {
+          "package_name": "ie.wit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223140288236-47pl7f1hhotjeejs9j4atvrv1ir15qda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYcwCmIILNUx6rKOUF7qrPJldNANtICGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223140288236-47pl7f1hhotjeejs9j4atvrv1ir15qda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

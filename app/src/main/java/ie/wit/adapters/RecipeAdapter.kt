@@ -8,7 +8,14 @@ import ie.wit.R
 import ie.wit.models.RecipeModel
 import kotlinx.android.synthetic.main.card_recipe.view.*
 
-class RecipeAdapter constructor(private var recipes: List<RecipeModel>)
+
+
+interface RecipeListener {
+    fun onRecipeClick(recipe: RecipeModel)
+}
+
+class RecipeAdapter constructor( var recipes: ArrayList<RecipeModel>,
+                                 private val listener: RecipeListener)
     : RecyclerView.Adapter<RecipeAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
@@ -23,18 +30,25 @@ class RecipeAdapter constructor(private var recipes: List<RecipeModel>)
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
         val recipe = recipes[holder.adapterPosition]
-        holder.bind(recipe)
+        holder.bind(recipe,listener)
     }
 
     override fun getItemCount(): Int = recipes.size
 
+    fun removeAt(position: Int) {
+        recipes.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
     class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(recipe: RecipeModel) {
+
+        fun bind(recipe: RecipeModel, listener: RecipeListener) {
+            itemView.tag = recipe
             itemView.recipeNameList.text = recipe.name
             itemView.recipeIngredientsList.text = recipe.ingredients
             itemView.recipeExplainList.text= recipe.recipeExplain
-
+            itemView.setOnClickListener { listener.onRecipeClick(recipe) }
         }
     }
 }

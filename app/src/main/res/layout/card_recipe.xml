@@ -13,6 +13,18 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="241dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
         <TextView
             android:id="@+id/recipeNameList"
             android:layout_width="wrap_content"
@@ -35,6 +47,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/recipeIngredientsList"/>
 
+
+        <ImageView
+            android:id="@+id/imagefavourite"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="325dp"
+            android:layout_toEndOf="@id/recipeExplainList"
+            app:srcCompat="@android:drawable/star_big_off" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
